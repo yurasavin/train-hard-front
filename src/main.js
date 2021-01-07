@@ -5,7 +5,7 @@ import router from '@/router';
 import store from '@/store';
 import vuetify from '@/plugins/vuetify';
 
-axios.defaults.baseURL = 'http://192.168.1.68:8888/api/v1/';
+axios.defaults.baseURL = `${process.env.VUE_APP_BACKEND_DOMAIN}/api/v1/`;
 
 Vue.config.productionTip = false;
 
