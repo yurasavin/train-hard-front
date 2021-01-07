@@ -1,18 +1,36 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <UserSelect v-if="!currentUser" />
+    <ProgramSelect v-else-if="!currentProgram" />
+    <Training v-else />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import { mapState } from 'vuex';
+
+import ProgramSelect from '@/components/ProgramSelect.vue';
+import Training from '@/components/Training.vue';
+import UserSelect from '@/components/UserSelect.vue';
 
 export default {
-  name: "Home",
+  name: 'Home',
+
   components: {
-    HelloWorld
-  }
+    ProgramSelect,
+    Training,
+    UserSelect
+  },
+
+  computed: {
+    ...mapState('users', {
+      currentUser: state => state.currentUser
+    }),
+    ...mapState('programs', {
+      currentProgram: state => state.currentProgram
+    })
+  },
+
+  methods: {}
 };
 </script>
