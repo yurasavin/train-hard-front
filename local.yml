@@ -5,8 +5,7 @@ services:
   nginx:
     image: nginx:latest
     volumes:
-      - "./compose/nginx/conf.d:/etc/nginx/conf.d"
-      - "./dist:/www/dist"
+      - "./compose/nginx/conf.d_local:/etc/nginx/conf.d"
     ports:
       - "0.0.0.0:80:80"
     restart: always

@@ -1,17 +1,16 @@
-import Vue from 'vue';
-import axios from 'axios';
-import App from '@/App.vue';
-import router from '@/router';
-import store from '@/store';
+import AppLayout from '@/layout/index.vue';
 import vuetify from '@/plugins/vuetify';
+import router from '@/router';
+import axios from '@/services/axios.js';
+import store from '@/store';
+import Vue from 'vue';
 
-axios.defaults.baseURL = `${process.env.VUE_APP_BACKEND_DOMAIN}/api/v1/`;
-
+Vue.prototype.$axios = axios;
 Vue.config.productionTip = false;
 
 new Vue({
-  router,
-  store,
-  vuetify,
-  render: h => h(App)
+    router,
+    store,
+    vuetify,
+    render: h => h(AppLayout)
 }).$mount('#app');

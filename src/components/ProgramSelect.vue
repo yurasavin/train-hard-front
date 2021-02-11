@@ -24,10 +24,6 @@ export default {
   computed: {
     ...mapState('programs', {
       programs: state => state.programs
-    }),
-
-    ...mapState('users', {
-      currentUser: state => state.currentUser
     })
   },
 
@@ -36,7 +32,7 @@ export default {
   },
 
   created() {
-    this.loadPrograms(this.currentUser.id);
+    this.loadPrograms();
   }
 };
 </script>

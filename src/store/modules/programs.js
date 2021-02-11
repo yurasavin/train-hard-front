@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from '@/services/axios.js';
 
 export default {
   namespaced: true,
@@ -19,8 +19,8 @@ export default {
   },
 
   actions: {
-    loadPrograms(store, user_id) {
-      axios.get(`programs/?user_id=${user_id}`).then(response => {
+    loadPrograms(store) {
+      axios.get('programs/').then(response => {
         store.commit('_setPrograms', response.data);
       });
     },

@@ -1,7 +1,6 @@
 <template>
   <div class="home">
-    <UserSelect v-if="!currentUser" />
-    <ProgramSelect v-else-if="!currentProgram" />
+    <ProgramSelect v-if="!currentProgram" />
     <Training v-else />
   </div>
 </template>
@@ -11,21 +10,16 @@ import { mapState } from 'vuex';
 
 import ProgramSelect from '@/components/ProgramSelect.vue';
 import Training from '@/components/Training.vue';
-import UserSelect from '@/components/UserSelect.vue';
 
 export default {
   name: 'Home',
 
   components: {
     ProgramSelect,
-    Training,
-    UserSelect
+    Training
   },
 
   computed: {
-    ...mapState('users', {
-      currentUser: state => state.currentUser
-    }),
     ...mapState('programs', {
       currentProgram: state => state.currentProgram
     })
