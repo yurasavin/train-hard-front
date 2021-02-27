@@ -1,12 +1,14 @@
 version: '3.7'
 
-services:
+networks:
+  train-hard:
+    external: true
 
-  nginx:
-    image: nginx:latest
-    volumes:
-      - "./compose/nginx/conf.d:/etc/nginx/conf.d"
-      - "./dist:/www/dist"
+services:
+  front:
+    image: iriskin/train-hard-front:latest
     ports:
       - "0.0.0.0:80:80"
+    networks:
+      - train-hard
     restart: always
