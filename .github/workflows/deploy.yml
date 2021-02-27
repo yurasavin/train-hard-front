@@ -51,5 +51,6 @@ jobs:
           echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
           chmod 644 ~/.ssh/known_hosts
           scp ./docker-compose.yml $REMOTE_USER@$REMOTE_HOST:front/docker-compose.yml
+          ssh $REMOTE_USER@$REMOTE_HOST 'docker-compose -f front/docker-compose.yml pull'
           ssh $REMOTE_USER@$REMOTE_HOST 'docker-compose -f front/docker-compose.yml stop'
           ssh $REMOTE_USER@$REMOTE_HOST 'docker-compose -f front/docker-compose.yml up -d'
