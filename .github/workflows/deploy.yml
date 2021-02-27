@@ -28,6 +28,7 @@ jobs:
           tags: iriskin/train-hard-front:latest
 
   deploy_to_server:
+    needs: push_to_registry
     name: Deploy project
     runs-on: ubuntu-latest
 
