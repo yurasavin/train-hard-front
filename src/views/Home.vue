@@ -1,30 +1,21 @@
 <template>
-  <div class="home">
-    <ProgramSelect v-if="!currentProgram" />
-    <Training v-else />
-  </div>
+    <div class="home">
+        <Training />
+    </div>
 </template>
 
 <script>
-import { mapState } from 'vuex';
-
-import ProgramSelect from '@/components/ProgramSelect.vue';
 import Training from '@/components/Training.vue';
 
 export default {
-  name: 'Home',
+    name: 'Home',
 
-  components: {
-    ProgramSelect,
-    Training
-  },
+    components: {
+        Training
+    },
 
-  computed: {
-    ...mapState('programs', {
-      currentProgram: state => state.currentProgram
-    })
-  },
+    computed: {},
 
-  methods: {}
+    methods: {}
 };
 </script>

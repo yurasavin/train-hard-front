@@ -42,8 +42,16 @@ export default {
                     icon: 'mdi-view-dashboard',
                     route: { name: 'home' }
                 },
-                { title: 'Foo', icon: 'mdi-image', route: { name: 'foo' } },
-                { title: 'Bar', icon: 'mdi-help-box', route: { name: 'bar' } }
+                {
+                    title: 'Профиль',
+                    icon: 'mdi-image',
+                    route: { name: 'profile' }
+                },
+                {
+                    title: 'Мои программы',
+                    icon: 'mdi-help-box',
+                    route: { name: 'programs' }
+                }
             ]
         };
     },
@@ -66,4 +74,4 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped></style>

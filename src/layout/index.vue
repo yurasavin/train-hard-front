@@ -2,18 +2,12 @@
     <v-app>
         <AppHeader />
 
-        <v-main id="main">
+        <v-main>
             <SideNavigation />
             <v-container fluid>
-                <!-- <v-row>
-                    <v-col cols="auto">
-                    </v-col>
-                    <v-col> -->
                 <transition name="fade">
                     <router-view />
                 </transition>
-                <!-- </v-col>
-                </v-row> -->
             </v-container>
         </v-main>
 
@@ -36,8 +30,13 @@ export default {
 };
 </script>
 
-<style scoped>
-#main {
-    /* background-color: #204165; */
+<style>
+/* TODO remove .btn-fix when vuetify fix highlight fab button after click */
+.btn-fix:focus::before {
+    opacity: 0 !important;
+}
+
+.big-letters {
+    font-size: 24px !important;
 }
 </style>
