@@ -10,7 +10,7 @@ services:
     volumes:
       - ./certs:/certs
     ports:
-      - "0.0.0.0:80:80"
+      - "0.0.0.0:443:443"
     networks:
       - train-hard
     restart: always
